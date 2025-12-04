@@ -173,67 +173,6 @@ def main():
         print(f"   {name:12} {time:.6f} сек")
     print(f"\n→ Найшвидший в цілому: {fastest_overall}")
 
-    # Generate markdown report
-    report = f"""# Порівняння алгоритмів пошуку підрядка
-
-## Стаття 1
-
-### Існуючий підрядок "алгоритм"
-| Алгоритм | Час виконання |
-|----------|---------------|
-| KMP | {results1['KMP_exists']:.6f} сек |
-| Boyer-Moore | {results1['Boyer-Moore_exists']:.6f} сек |
-| Rabin-Karp | {results1['Rabin-Karp_exists']:.6f} сек |
-
-### Вигаданий підрядок
-| Алгоритм | Час виконання |
-|----------|---------------|
-| KMP | {results1['KMP_fake']:.6f} сек |
-| Boyer-Moore | {results1['Boyer-Moore_fake']:.6f} сек |
-| Rabin-Karp | {results1['Rabin-Karp_fake']:.6f} сек |
-
----
-
-## Стаття 2
-
-### Існуючий підрядок "рекомендаційної системи"
-| Алгоритм | Час виконання |
-|----------|---------------|
-| KMP | {results2['KMP_exists']:.6f} сек |
-| Boyer-Moore | {results2['Boyer-Moore_exists']:.6f} сек |
-| Rabin-Karp | {results2['Rabin-Karp_exists']:.6f} сек |
-
-### Вигаданий підрядок
-| Алгоритм | Час виконання |
-|----------|---------------|
-| KMP | {results2['KMP_fake']:.6f} сек |
-| Boyer-Moore | {results2['Boyer-Moore_fake']:.6f} сек |
-| Rabin-Karp | {results2['Rabin-Karp_fake']:.6f} сек |
-
----
-
-## Загальні результати
-
-| Алгоритм | Загальний час |
-|----------|---------------|
-| KMP | {total_kmp:.6f} сек |
-| Boyer-Moore | {total_bm:.6f} сек |
-| Rabin-Karp | {total_rk:.6f} сек |
-
-## Висновки
-
-**Найшвидший алгоритм в цілому: {fastest_overall}**
-
-Алгоритм {fastest_overall} показав найкращі результати як для окремих текстів, 
-так і в загальному підсумку. Він ефективно працює як з існуючими, так і з 
-вигаданими підрядками.
-"""
-
-    with open('ВИСНОВКИ.md', 'w', encoding='utf-8') as f:
-        f.write(report)
-
-    print("\n✓ Результати збережено у файл ВИСНОВКИ.md")
-
-
+    
 if __name__ == "__main__":
     main()
